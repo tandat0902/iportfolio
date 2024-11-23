@@ -18,6 +18,10 @@
     --mode-color: #ccc;
 
     --green-color-text:rgb(76, 175, 80);
+    --first-color2: rgba(110, 87, 224, 0.3);
+    --first-color3: rgba(110, 87, 224, 0.2);
+    --first-color4: rgba(110, 87, 224, 0.1);
+    --first-color5: rgba(110, 87, 224, 0.05);
 }
 
 *{
@@ -45,6 +49,10 @@ body.dark{
     --body-color:#202425;
     --box-color: #fff;
     --first-color:rgb(76, 175, 80);
+    --first-color2:rgb(76, 175, 80, 0.3);
+    --first-color3:rgb(76, 175, 80, 0.2);  
+    --first-color4:rgb(76, 175, 80, 0.1);
+    --first-color5:rgb(76, 175, 80, 0.05);
 
     --nav-color:#262425;
     --color-white: #fff;
@@ -63,6 +71,7 @@ body.dark{
 
 html{
     scroll-behavior: smooth;
+    scroll-padding-top: 150px;
 }
 
 nav{
@@ -76,6 +85,10 @@ nav{
     padding-inline: 10vw;
     transition: 0.3s;
     z-index: 100;
+}
+
+#header{
+    box-shadow: var(--first-color) 0px 5px, var(--first-color2) 0px 10px, var(--first-color3) 0px 15px, var(--first-color4) 0px 20px, var(--first-color5) 0px 25px;
 }
 
 .nav-logo{
@@ -275,4 +288,90 @@ body.dark #moon{
 .icon i:hover{
     color: var(--first-color);
     transform: scale(120%);
+}
+
+/* --- SKILL BOX --- */
+.top-header{
+    text-align: center;
+    font-size: 1.8rem;
+    margin-bottom: 32px;
+    color: var(--first-color);
+}
+
+#skill{
+    margin-bottom: 60px;
+}
+
+.skill-text{
+    font-size: 1.3rem;
+    padding-left: 10px;
+    border-left: 4px solid var(--first-color);
+    margin-bottom: 32px;
+}
+
+.skill-container{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-bottom: 40px;
+}
+
+.skill-box{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 30%;
+    height: 150px;
+    background: transparent;
+    border: 2px solid #fff;
+    border-radius: 20px;
+    box-shadow: 1px 8px 10px 2px var(--first-shadow);
+    overflow: hidden;
+    cursor: pointer;
+    animation: changeBackground 3s infinite alternate;
+    transition: all 0.4s ease-in-out;
+}
+
+.skill-box:hover{
+    transform: scale(105%);
+}
+
+.skill-box > i{
+    font-size: 50px;
+}
+
+.skill-container .html > i{
+    color: rgb(222,75,37);
+}
+
+.skill-container .css > i{
+    color: rgb(37,75,223);
+}
+
+.skill-container .js > i{
+    color: rgb(207,180,48);
+}
+
+.skill-container .bootstrap > i{
+    color: rgb(120,17,241);
+}
+
+.skill-container .git > i{
+    color: rgb(233,77,50);
+}
+
+.skill-container .gitlab > i{
+    color: rgb(250,175,62);
+}
+
+.skill-container .docker > i{
+    color: rgb(11,159,190);
+}
+
+.skill-container .gitlab > i{
+    color: rgb(250,175,62);
 }
