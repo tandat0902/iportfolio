@@ -43,6 +43,14 @@ sr.reveal(".skill-box", {interval: 200});
 
 sr.reveal(".top-header", {});
 
+const srBottom = ScrollReveal({
+    origin: "bottom",
+    distance: "80px",
+    duration: 2000,
+});
+
+srBottom.reveal(".project-box", {delay: 100});
+
 const srLeft = ScrollReveal({
     origin: "left",
     distance: "80px",

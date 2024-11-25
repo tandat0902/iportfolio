@@ -263,11 +263,13 @@ body.dark #moon{
 
 .btn{
     text-decoration: none;
+    border: none;
     font-size: 15px;
     padding: 10px 20px;
     cursor: pointer;
     border-radius: 8px;
     background: var(--first-color);
+    color: #fff;
     font-weight: 500;
     transition: all .5s ease;
 }
@@ -348,10 +350,6 @@ body.dark #moon{
     cursor: pointer;
     animation: changeBackground 3s infinite alternate;
     transition: all 0.4s ease-in-out;
-}
-
-.skill-box:hover{
-    transform: scale(105%);
 }
 
 .skill-box > i{
@@ -443,6 +441,10 @@ body.dark #moon{
 }
 
 /* --- PROJECT BOX --- */
+#project{
+    margin-bottom: 200px;
+}
+
 .dXBbAj{
     color: var(--text-color);
     font-size: 1.6rem;
@@ -451,20 +453,18 @@ body.dark #moon{
 
 .project-container{
     width: 100%;
-    max-width: 100vw;
     margin-bottom: 40px;
-    position: relative;
 }
 
 .project-slides{
     position: relative;
     width: 100%;
-    height: 335px;
+    height: 40vh;
 }
 
 #next, #prev{
     position: absolute;
-    top: 40%;
+    top: 50%;
     font-family: monospace;
     font-size: 20px;
     font-weight: bold;
@@ -475,6 +475,19 @@ body.dark #moon{
     border: none;
     background: var(--first-color);
     color: #fff;
+    transition: .4s ease-in;
+    z-index: 2;
+}
+
+#next:hover{
+    transform: scale(115%) rotate(360deg);
+    box-shadow: var(--first-color) 0px 0px 24px;
+
+}
+
+#prev:hover{
+    transform: scale(115%) rotate(360deg);
+    box-shadow: var(--first-color) 0px 0px 24px;
 }
 
 #next{
@@ -484,9 +497,9 @@ body.dark #moon{
 
 .projects{
     position: absolute;
-    width:900px;
+    width:75%;
     transition: .5s;
-    left: calc(50% - 450px);
+    left: 12.5%;
     top: 0;
 }
 
@@ -547,30 +560,92 @@ body.dark #moon{
     -webkit-tap-highlight-color: transparent;
 }
 
-
-
-/* .buttons{
-    position: absolute;
-    top: 30%;
-    left: 5%;
-    width: 90%;
+/* --- FOOTER --- */
+footer{
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    row-gap: 30px;
+    border-top:5px var(--first-color) solid;
+    background: var(--nav-color);
+    padding-block: 40px 60px;
 }
 
-.buttons button{
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    border: none;
-    background: var(--first-color);
-    color: #fff;
-} */
+.middle-footer .footer-menu{
+    display: flex;
+}
+
+.footer-menu_list{
+    list-style: none;
+}
+
+.footer-menu_list a{
+    text-decoration: none;
+    color: var(--text-color);
+    font-weight: 600;
+    margin-inline: 20px;
+}
+
+.footer-menu_list a:hover{
+    color: var(--first-color);
+}
+
+.footer-social-icons{
+    display: flex;
+    gap: 30px;
+    color: var()var(--text-color);
+}
+
+.bottom-footer{
+    font-size: 14px;
+    margin-top: 10px;
+    color: var(--text-color);
+}
+
+.name-create{
+    text-decoration: none;
+    color: var(--first-color);
+    font-weight: 600;
+}
 
 /* --- RESPONSIVE --- */
+@media only screen and (max-width: 1140px){
+    #next, #prev{
+        left: 5%;
+    }
+    
+    #next{
+        left: unset;
+        right: 5%;
+    }
+
+    .project-slides{
+        height: 90vh;
+    }
+    
+    .projects{
+        width:70%;
+        left: 15%;
+        top: 0;
+    }
+
+    .project-image{
+        width: 100%;
+    }
+    
+    .project-info{
+        width: 100%;
+    }
+}
+
 @media only screen and (max-width: 1024px){
     .featured-text{
         padding: 0;
+    }
+
+    .project-slides{
+        height: 80vh;
     }
 }
 
@@ -653,6 +728,20 @@ body.dark #moon{
 
     .mode{
         margin-left: 40%;
+    }
+
+    .projects{
+        width:70%;
+        left: 15%;
+    }
+
+    #next, #prev{
+        left: 0;
+    }
+
+    #next{
+        left: unset;
+        right: 0;
     }
 }
 
