@@ -75,3 +75,45 @@ function scrollActive(){
 }
 
 window.addEventListener("scroll", scrollActive);
+
+// -------- SLIDES
+let projects = document.querySelectorAll('.project-slides .projects');
+let next = document.getElementById('next');
+let prev = document.getElementById('prev');
+
+
+
+let active = 1;
+function loadShow(){
+    let stt = 0;
+    projects[active].style.transform = `none`;
+    projects[active].style.zIndex = 1;
+    projects[active].style.filter = `none`;
+    projects[active].style.opacity = 1;
+    for(var i = active + 1; i < projects.length; i++){
+        stt++;
+        projects[i].style.zIndex = -stt;
+        projects[i].style.filter = `blur(5px)`;
+        projects[i].style.opacity = 0;
+    }
+
+    stt = 0;
+    for(var i = active - 1; i >= 0; i--){
+        stt++;
+        projects[i].style.zIndex = -stt;
+        projects[i].style.filter = `blur(5px)`;
+        projects[i].style.opacity = 0;
+    }
+}
+
+loadShow();
+
+next.onclick = function(){
+    active = active + 1 < projects.length ? active + 1 : active;
+    loadShow();
+}
+
+prev.onclick = function(){
+    active = active - 1 >= 0 ? active - 1 : active;
+    loadShow();
+}

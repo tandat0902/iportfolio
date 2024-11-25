@@ -16,7 +16,7 @@
     --text-color: #444444;
     
     --icon-color: #242526;
-    --mode-color: #ccc;
+    --mode-color: rgb(250,250,250);
     --skill-box:rgba(250, 250, 250);
 
     --changed-color:rgb(91, 78, 205);
@@ -67,7 +67,7 @@ body.dark{
     --nav-icon: #fff;
     --logo-color: #fff;
     --icon-color: #8749f2;
-    --mode-color: #fff;
+    --mode-color: rgb(32,36,37);
 }
 
 .container{
@@ -167,9 +167,17 @@ nav{
     justify-content: center;
     height: 40px;
     width: 40px;
+    border: 1px solid var(--first-color);
     border-radius: 30px;
     cursor: pointer;
+    color: var(--first-color);
     background: var(--mode-color);
+    /* box-shadow: var(--first-color) 0px 0px 15px -2px, var(--first-color2) 0px 0px 15px -3px; */
+    transition: all .3s ease-in-out;
+}
+
+.moon-sun:hover{
+    transform: scale(105%);
 }
 
 .moon-sun :is(#moon, #sun){
@@ -434,6 +442,130 @@ body.dark #moon{
     transition: all 0.4s ease-in-out;
 }
 
+/* --- PROJECT BOX --- */
+.dXBbAj{
+    color: var(--text-color);
+    font-size: 1.6rem;
+    margin-bottom: 20px;
+}
+
+.project-container{
+    width: 100%;
+    max-width: 100vw;
+    margin-bottom: 40px;
+    position: relative;
+}
+
+.project-slides{
+    position: relative;
+    width: 100%;
+    height: 335px;
+}
+
+#next, #prev{
+    position: absolute;
+    top: 40%;
+    font-family: monospace;
+    font-size: 20px;
+    font-weight: bold;
+    left: 5%;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: none;
+    background: var(--first-color);
+    color: #fff;
+}
+
+#next{
+    left: unset;
+    right: 5%;
+}
+
+.projects{
+    position: absolute;
+    width:900px;
+    transition: .5s;
+    left: calc(50% - 450px);
+    top: 0;
+}
+
+.project-box{
+    position: relative;
+    padding: 30px;
+    width: 100%;
+    background: var(--skill-box);
+    border-radius: 20px;
+    box-shadow: 1px 8px 10px 2px var(--first-shadow);
+    overflow: hidden;
+    cursor: pointer;
+    animation: changeBackground 3s infinite alternate;
+    transition: all 0.4s ease-in-out;
+    display: flex;
+    gap: 25px;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.project-image{
+    width: 48%;
+}
+
+.project-image img{
+    width: 100%;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+.project-info{
+    position: relative;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: var(--text-color);
+    width: 48%;
+}
+
+.project-des{
+    margin-bottom: 20px;
+}
+
+.use-tech{
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.dscDKW{
+    background: rgba(76, 175, 80, 0.125);
+    color: var(--first-color);
+    padding: 0.5rem 0.75rem;
+    border-radius: 12px;
+    font-size: 0.8rem;
+    -webkit-tap-highlight-color: transparent;
+}
+
+
+
+/* .buttons{
+    position: absolute;
+    top: 30%;
+    left: 5%;
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.buttons button{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: none;
+    background: var(--first-color);
+    color: #fff;
+} */
 
 /* --- RESPONSIVE --- */
 @media only screen and (max-width: 1024px){
